@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { addUserAction } from '../redux/actions';
 
-export class Login extends Component {
+class Login extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -87,20 +87,9 @@ export class Login extends Component {
 
 Login.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  // userEmail: PropTypes.string.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
 };
-
-// const mapDispatchToProps = (state) => {
-//   console.log(state);
-// };
-
-// export default Login;
-
-// const mapStateToProps = (state) => ({
-//   userEmail: state.userReducer.email,
-// });
 
 export default connect()(Login);

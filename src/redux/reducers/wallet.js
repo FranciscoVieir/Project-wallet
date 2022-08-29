@@ -8,7 +8,7 @@ const INITIAL_STATE = {
   idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
 };
 
-function userReducer(state = INITIAL_STATE, action) {
+function WalletReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
   case ADD_WALLET: return {
     ...state,
@@ -18,4 +18,4 @@ function userReducer(state = INITIAL_STATE, action) {
   }
 }
 
-export default userReducer;
+export default WalletReducer;
