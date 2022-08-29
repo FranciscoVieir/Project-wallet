@@ -6,6 +6,7 @@ class Header extends Component {
   render() {
     const { userEmail } = this.props;
     // console.log(this.props);
+    // console.log(this.props);
     return (
       <div>
         <span data-testid="email-field">{`Email: ${userEmail}`}</span>

@@ -1,5 +1,5 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { ADD_WALLET } from '../actions';
+import { GET_ERROR, GET_REQUEST_API, RESPONSE_API } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -10,10 +10,18 @@ const INITIAL_STATE = {
 
 function WalletReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-  case ADD_WALLET: return {
+  case GET_REQUEST_API: return {
     ...state,
-    payload: action.payload,
   };
+  case RESPONSE_API: return {
+    ...state,
+    currencies: action.payload,
+  };
+  case GET_ERROR: return {
+    ...state,
+    error: action.err,
+  };
+
   default: return state;
   }
 }
