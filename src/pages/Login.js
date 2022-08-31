@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { addUserAction, fetchApi } from '../redux/actions';
+import { addUserAction } from '../redux/actions';
 
 class Login extends React.Component {
   constructor() {
@@ -35,7 +35,6 @@ class Login extends React.Component {
     const { email } = this.state;
 
     dispatch(addUserAction(email));
-    dispatch(fetchApi());
     history.push('/carteira');
   };
 

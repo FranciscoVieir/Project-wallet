@@ -3,6 +3,7 @@ export const ADD_WALLET = 'ADD_WALLET';
 export const GET_REQUEST_API = 'GET_REQUEST_API';
 export const RESPONSE_API = 'RESPONSE_API';
 export const GET_ERROR = 'GET_ERROR';
+export const GET_COMPLETE_API = 'GET_COMPLETE_API';
 
 const URL = 'https://economia.awesomeapi.com.br/json/all';
 
@@ -34,6 +35,13 @@ export function getErrorApi(err) {
   };
 }
 
+export function getApiComplete(payload) {
+  return {
+    type: GET_COMPLETE_API,
+    payload,
+  };
+}
+
 // THUNK
 
 export function fetchApi() {
@@ -46,6 +54,21 @@ export function fetchApi() {
       const code = Object.keys(result).filter((el) => el !== 'USDT');
 
       return dispatch(responseAPi(code));
+    } catch (error) {
+      dispatch(getErrorApi(error.message));
+    }
+  };
+}
+
+export function fetchApiExpenses(state) {
+  return async (dispatch) => {
+    dispatch(requestApiWallet());
+    try {
+      const request = await fetch(URL);
+      const result = await request.json();
+      const newObj = { ...state, exchangeRates: result };
+      // console.log(newObj);
+      return dispatch(getApiComplete(newObj));
     } catch (error) {
       dispatch(getErrorApi(error.message));
     }
