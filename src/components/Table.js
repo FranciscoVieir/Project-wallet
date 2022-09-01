@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class Table extends Component {
   render() {
+    const { valueExpenses } = this.props;
+    // console.log(valueExpenses);
+
     return (
-      <table>
-        <tbody>
-          <tr>
+      <>
+        <table>
+          <tbody>
             <th>Descrição</th>
             <th>Tag</th>
             <th>Método de pagamento</th>
@@ -15,11 +20,58 @@ class Table extends Component {
             <th>Valor convertido</th>
             <th>Moeda de conversão</th>
             <th>Editar/Excluir</th>
-          </tr>
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            {valueExpenses.map((el, index) => (
+              <tr key={ index }>
+                <td>{el.description}</td>
+                <td>{el.tag}</td>
+                <td>{el.method}</td>
+                <td>{parseFloat(el.value).toFixed(2)}</td>
+                <td>{el.exchangeRates[el.currency].name}</td>
+                <td>{(el.value * el.exchangeRates[el.currency].ask).toFixed(2)}</td>
+                <td>{parseFloat(el.exchangeRates[(el.currency)].ask).toFixed(2)}</td>
+                <td>Real</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+      </>
     );
   }
 }
 
-export default Table;
+const mapStateToProps = (state) => ({
+  // userEmail: state.user.email,
+  valueExpenses: state.wallet.expenses,
+});
+
+Table.propTypes = {
+  valueExpenses: PropTypes.arrayOf(PropTypes.shape({
+    currency: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    method: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    exchangeRates: PropTypes.objectOf(PropTypes.shape({
+      ask: PropTypes.string.isRequired,
+      bid: PropTypes.string.isRequired,
+      code: PropTypes.string.isRequired,
+      codeIn: PropTypes.string,
+      create_date: PropTypes.string.isRequired,
+      high: PropTypes.string.isRequired,
+      low: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      pctChange: PropTypes.string.isRequired,
+      timestamp: PropTypes.string.isRequired,
+      varBid: PropTypes.string.isRequired,
+    })),
+  })).isRequired,
+  // dispatch: PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps)(Table);

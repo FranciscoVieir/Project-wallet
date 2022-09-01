@@ -21,7 +21,7 @@ class Header extends Component {
 
   render() {
     const { userEmail } = this.props;
-    console.log(this.props);
+    // console.log(this.props);
 
     return (
       <header>
@@ -57,7 +57,7 @@ Header.propTypes = {
       ask: PropTypes.string.isRequired,
       bid: PropTypes.string.isRequired,
       code: PropTypes.string.isRequired,
-      codeIn: PropTypes.string.isRequired,
+      codeIn: PropTypes.string,
       create_date: PropTypes.string.isRequired,
       high: PropTypes.string.isRequired,
       low: PropTypes.string.isRequired,
