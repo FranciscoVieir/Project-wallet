@@ -28,8 +28,8 @@ class Login extends React.Component {
     this.setState({ buttonIsDisable: !isDisable });
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  handleSubmit = () => {
+    // event.preventDefault();
 
     const { dispatch, history } = this.props;
     const { email } = this.state;
@@ -54,7 +54,7 @@ class Login extends React.Component {
               name="email"
               id="email"
               value={ email }
-              placeholder="Digite o seu e-mail"
+              placeholder="Digite o seu email"
               data-testid="email-input"
               onChange={ this.handleChange }
 
