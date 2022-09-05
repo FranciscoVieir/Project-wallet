@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { deleteObj } from '../redux/actions';
 
 class Table extends Component {
   render() {
-    const { valueExpenses } = this.props;
+    const { valueExpenses, dispatch } = this.props;
     // console.log(valueExpenses);
 
     return (
-      <>
-        <table>
-          <tbody>
+      <table>
+        <thead>
+          <tr>
             <th>Descrição</th>
             <th>Tag</th>
             <th>Método de pagamento</th>
@@ -20,26 +21,33 @@ class Table extends Component {
             <th>Valor convertido</th>
             <th>Moeda de conversão</th>
             <th>Editar/Excluir</th>
-          </tbody>
-        </table>
-        <table>
-          <tbody>
-            {valueExpenses.map((el, index) => (
-              <tr key={ index }>
-                <td>{el.description}</td>
-                <td>{el.tag}</td>
-                <td>{el.method}</td>
-                <td>{parseFloat(el.value).toFixed(2)}</td>
-                <td>{el.exchangeRates[el.currency].name}</td>
-                <td>{(el.value * el.exchangeRates[el.currency].ask).toFixed(2)}</td>
-                <td>{parseFloat(el.exchangeRates[(el.currency)].ask).toFixed(2)}</td>
-                <td>Real</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+          </tr>
+        </thead>
 
-      </>
+        <tbody>
+          {valueExpenses.map((el) => (
+            <tr key={ el.id }>
+              <td>{el.description}</td>
+              <td>{el.tag}</td>
+              <td>{el.method}</td>
+              <td>{parseFloat(el.value).toFixed(2)}</td>
+              <td>{el.exchangeRates[el.currency].name}</td>
+              <td>{(el.value * el.exchangeRates[el.currency].ask).toFixed(2)}</td>
+              <td>{parseFloat(el.exchangeRates[(el.currency)].ask).toFixed(2)}</td>
+              <td>Real</td>
+              <td>
+                <button
+                  type="button"
+                  data-testid="delete-btn"
+                  onClick={ () => dispatch(deleteObj(el.id)) }
+                >
+                  Excluir
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     );
   }
 }
@@ -71,7 +79,7 @@ Table.propTypes = {
       varBid: PropTypes.string.isRequired,
     })),
   })).isRequired,
-  // dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(Table);

@@ -4,6 +4,8 @@ export const GET_REQUEST_API = 'GET_REQUEST_API';
 export const RESPONSE_API = 'RESPONSE_API';
 export const GET_ERROR = 'GET_ERROR';
 export const GET_COMPLETE_API = 'GET_COMPLETE_API';
+export const DELETE = 'DELETE';
+export const EDIT_ACTION = 'EDIT_ACTION';
 
 const URL = 'https://economia.awesomeapi.com.br/json/all';
 
@@ -38,6 +40,13 @@ export function getErrorApi(err) {
 export function getApiComplete(payload) {
   return {
     type: GET_COMPLETE_API,
+    payload,
+  };
+}
+
+export function deleteObj(payload) {
+  return {
+    type: DELETE,
     payload,
   };
 }

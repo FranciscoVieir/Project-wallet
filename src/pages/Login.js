@@ -28,8 +28,8 @@ class Login extends React.Component {
     this.setState({ buttonIsDisable: !isDisable });
   };
 
-  handleSubmit = () => {
-    // event.preventDefault();
+  handleSubmit = (event) => {
+    event.preventDefault();
 
     const { dispatch, history } = this.props;
     const { email } = this.state;

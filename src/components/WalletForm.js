@@ -27,8 +27,8 @@ class WalletForm extends Component {
     this.setState({ [name]: value });
   };
 
-  handleClick = (event) => {
-    event.preventDefault();
+  handleClick = () => {
+    // event.preventDefault();
 
     const { dispatch } = this.props;
 

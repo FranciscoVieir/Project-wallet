@@ -5,6 +5,8 @@ import renderWithRouterAndRedux from './helpers/renderWith';
 // import Login from '../pages/Login';
 import App from '../App';
 
+const EMAILTESTE = 'tryber@teste.com';
+
 describe('Teste se a página é renderizada na aba "/" e as informações', () => {
   test('Verifica se o history redireciona para a página correta', () => {
     renderWithRouterAndRedux(<App />);
@@ -64,12 +66,32 @@ describe('Teste se a página é renderizada na aba "/" e as informações', () =
       // expect(inputEmail).toBeInTheDocument();
       const button = screen.getByText(/Entrar/i);
 
-      userEvent.type(inputEmail, 'tryber@teste.com');
+      userEvent.type(inputEmail, EMAILTESTE);
       userEvent.type(inputPassword, '666666');
 
       userEvent.click(button);
 
       expect(history.location.pathname).toBe('/carteira');
+
+      const valueName = screen.getByText(/adicionar despesa/i);
+
+      expect(valueName).toBeInTheDocument();
     });
+  });
+
+  test('Verifique se as informações são salvas no estado global', () => {
+    const { store } = renderWithRouterAndRedux(<App />);
+
+    const inputEmail = screen.getByPlaceholderText(/Digite o seu email/i);
+    const inputPassword = screen.getByPlaceholderText(/Digite sua senha/i);
+    // expect(inputEmail).toBeInTheDocument();
+    const button = screen.getByText(/Entrar/i);
+
+    userEvent.type(inputEmail, EMAILTESTE);
+    userEvent.type(inputPassword, '666666');
+
+    userEvent.click(button);
+
+    expect(store.getState().user.email).toBe('tryber@teste.com');
   });
 });
