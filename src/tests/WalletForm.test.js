@@ -7,7 +7,7 @@ import mockData from './helpers/mockData';
 // import initialState from './helpers/InitialState';
 import App from '../App';
 
-global.fecth = jest.fn(() => Promise.resolve({
+global.fetch = jest.fn(() => Promise.resolve({
   json: () => Promise.resolve(mockData),
 }));
 
@@ -68,7 +68,7 @@ describe('Verifica se o componente wallet é renderizado ', () => {
   test('', async () => {
     renderWithRouterAndRedux(<App />, { initialEntries: ['/carteira'] });
 
-    const currency = await screen.findByRole('combobox', { name: /currency/i });
+    const currency = await screen.findByRole('combobox', { name: /moeda:/i });
     expect(currency).toBeInTheDocument();
   });
 });

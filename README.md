@@ -1,22 +1,4 @@
-# Boas-vindas ao repositório do projeto Trybewallet!
-
-Para realizar o projeto, atente-se a cada passo descrito a seguir, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
-
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
-
-# Termos e acordos
-
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta e do Manual da Pessoa Estudante da Trybe.
-
-# Entregáveis
-
-<details>
-  <summary><strong>🤷🏽‍♀️ Como entregar</strong></summary><br />
-
-  Para entregar o seu projeto você deverá criar um *Pull Request* neste repositório.
-
-  Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://app.betrybe.com/course/4d67f5b4-34a6-489f-a205-b6c7dc50fc16/) e nosso [Blog - Git & GitHub](https://blog.betrybe.com/tecnologia/git-e-github/) sempre que precisar!
-</details>
+# Boas-vindas ao repositório do projeto Wallet!
 
 <details>
   <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary><br />
@@ -46,15 +28,6 @@ Neste projeto, verificamos se você é capaz de:
 - Criar _actions_ assíncronas na sua aplicação React que faz uso de Redux.
 </details>
 
-<details>
-  <summary><strong>🗓 Data de Entrega</strong></summary><br />
-  
-  * Este projeto é individual;
-  * São `5` dias de projeto;
-  * Data para entrega final do projeto: `13/09/2022 14:00`.
-
-</details>
-
 # Orientações
 
 <details>
@@ -62,199 +35,15 @@ Neste projeto, verificamos se você é capaz de:
 
   1. Clone o repositório
 
-  - Use o comando: `git clone git@github.com:tryber/sd-023-b-project-trybewallet.git`.
+  - Use o comando: `git clone git@github.com:FranciscoVieir/project-wallet.git`.
   - Entre na pasta do repositório que você acabou de clonar:
-    - `cd sd-023-b-project-trybewallet`
+    - `cd project-wallet`
 
   2. Instale as dependências
 
   - `npm install`.
   
-  3. Crie uma branch a partir da branch `master`
-
-  - Verifique que você está na branch `master`
-    - Exemplo: `git branch`
-  - Se não estiver, mude para a branch `master`
-    - Exemplo: `git checkout master`
-  - Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
-    - Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    - Exemplo: `git checkout -b joaozinho-sd-023-b-project-trybewallet`
-
-  4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-
-  - Verifique que as mudanças ainda não estão no _stage_
-    - Exemplo: `git status` (deve aparecer listada a pasta _joaozinho_ em vermelho)
-  - Adicione o novo arquivo ao _stage_ do Git
-    - Exemplo:
-      - `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-      - `git status` (deve aparecer listado o arquivo _joaozinho/README.md_ em verde)
-  - Faça o `commit` inicial
-    - Exemplo:
-      - `git commit -m 'iniciando o projeto x'` (fazendo o primeiro commit)
-      - `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
-
-  5. Adicione a sua branch com o novo `commit` ao repositório remoto
-
-  - Usando o exemplo anterior: `git push -u origin joaozinho-sd-023-b-project-trybewallet`
-
-  6. Crie um novo `Pull Request` _(PR)_
-
-  - Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-023-b-project-trybewallet/pulls)
-  - Clique no botão verde _"New pull request"_
-  - Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  - Coloque um título para a sua _Pull Request_
-    - Exemplo: _"Cria tela de busca"_
-  - Clique no botão verde _"Create pull request"_
-  - Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  - **Não se preocupe em preencher mais nada por enquanto!**
-  - Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-023-b-project-trybewallet/pulls) e confira que o seu _Pull Request_ está criado
-
 </details>
-
-<details>
-  <summary><strong>⌨️ Durante o desenvolvimento</strong></summary><br />
-
-  - Faça `commits` das alterações que você fizer no código regularmente
-
-  - Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-  - Os comandos que você utilizará com mais frequência são:
-    1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-    2. `git add` _(para adicionar arquivos ao stage do Git)_
-    3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-    4. `git push -u origin nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-    5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
-</details>
-
-<details>
-  <summary><strong>🤝 Depois de terminar o desenvolvimento (opcional)</strong></summary><br />
-
-  Para sinalizar que o seu projeto está pronto para o _"Code Review"_, faça o seguinte:
-
-  - Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
-
-    - No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
-
-    - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
-
-    - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-023-b`.
-
-  Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
-</details>
-
-<details>
-  <summary><strong>🕵🏿 Revisando um pull request</strong></summary><br />
-
-  Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
-
-</details>
-
-<details>
-  <summary><strong>🎛 Linter</strong></summary><br />
-
-  Para garantir a qualidade do código, vamos utilizar neste projeto o linter ESLint. Assim, o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível e de fácil manutenção! Para rodar o _linter_ localmente no projeto, execute o comando abaixo:
-
-  `npm run lint`
-
-  ⚠ PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO! ⚠
-
-  Em caso de dúvidas, confira o material do course sobre [ESLint e Stylelint](https://app.betrybe.com/course/real-life-engineer/eslint).
-</details>
-
-<a name="testes"></a>
-
-<details>
-  <summary><strong>🛠 Testes</strong></summary><br />
-
-* <details><summary><b> Execução de testes de requisito</b></summary>
-
-  Os testes deste projeto foram feitos utilizando o [Cypress](https://www.cypress.io/how-it-works/). É utilizada nos testes a resolução `1366 x 768` (1366 pixels de largura por 768 pixels de altura) para testes de layout. Logo, recomenda-se desenvolver seu projeto usando a mesma resolução, via instalação [deste plugin](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en) do `Chrome` para facilitar a configuração dessa resolução, por exemplo.
-
-  Para o projeto ser validado, todos os testes de comportamento devem passar. É possível testar isso local rodando `npm run cy`. Esse comando roda a suite de testes do Cypress que valida se o fluxo geral e os requisitos funcionais estão funcionando como deveriam. Você pode também executar o comando `npm run cy:open` para ter um resultado visual dos testes executados.
-
-  Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nisso! Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
-
-  **Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
-  </details>
-
-* <details><summary><b> Execução de um teste específico</b></summary>
-
-  Para executar somente uma `spec` de testes, você pode ou rodar somente um arquivo de teste com o comando `npm run cy -- --spec cypress/integration/nomeDoArquivo_spec.js`, ou também pode selecionar qual delas você deseja após executar o comando `npm run cy:open`.
-
-  ![image](./imgs/cy-specs.png)
-
-  Além disso ainda é possível rodar apenas um trecho de um `spec`, basta utilizar a função .only após o `describe`, `it` ou `test`. Com isso, será possível que apenas parte de um teste rode localmente e seja avaliado.
-
-  ![image](./imgs/itOnly.png)
-
-  </details>
-
-* <details><summary><b> Execução de teste de cobertura</b></summary>
-
-  Alguns requisitos irão pedir para que você desenvolva testes para sua aplicação. Esses testes serão avaliados através da cobertura de testes.
-
-  É possível verificar o percentual da cobertura de testes com o comando `npm run test-coverage`. 
-
-  Você também pode executar `npm run test-coverage -- --collectCoverageFrom=caminho/da/Pagina` para verificar o percentual de cobertura de testes de cada 'Pagina'. Por exemplo, para verificar a cobertura de testes da página de `Login`, execute o comando `npm run test-coverage -- --collectCoverageFrom=src/pages/Login.js`.
-  </details><br />
-</details>
-
-<details>
-  <summary><strong id="como-desenvolver">:convenience_store: Desenvolvimento </strong></summary><br />
-
-  Neste projeto você vai desenvolver uma carteira de controle de gastos com conversor de moedas, utilizando Redux React. Na implementação você deverá **obrigatoriamente** utilizar o seguinte formato do estado global:
-
-```
-  {
-    user: {
-      email: '', // string que armazena o email da pessoa usuária
-    },
-    wallet: {
-      currencies: [], // array de string
-      expenses: [], // array de objetos, com cada objeto tendo as chaves id, value, currency, method, tag, description e exchangeRates
-      editor: false, // valor booleano que indica de uma despesa está sendo editada
-      idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
-    }
-  }
-```
-
-  É importante respeitar esse formato para que o avaliador funcione corretamente. Você pode adicionar novos campos ao seu estado global, mas essa estrutura básica deve se manter. Por exemplo, você pode adicionar uma propriedade `isFetching` no seu estado. Mas você **não** pode salvar as despesas em uma chave diferente de `wallet.expenses`.
-
-  Para que os testes consigam acessar a `store` do redux e realizar os testes, é necessário adicionar o seguinte bloco de código ao arquivo da `store`:
-
-  ```javascript
-  if (window.Cypress) {
-    window.store = store;
-  }
-  ```
-
-  **Observações Importantes:**
-
-  - Devido a estrutura que o avaliador utiliza para realizar os testes, é necessário que o seu Redux esteja configurado, ou seja, a store e os reducers estejam criados e conectados.
-
-  <br />
-  <details><summary><b> :bulb: Configurando o Redux DevTools</b></summary>
-
-  Para usarmos o Redux DevTools com o Redux-Thunk, vamos utilizar uma biblioteca chamada `redux-devtools-extension` que possui a função `composeWithDevTools`. Ela já está no package.json, a única coisa que você vai precisar fazer é configurar a sua store, por exemplo:
-
-  ```javascript
-  import { createStore, applyMiddleware } from 'redux';
-  import { composeWithDevTools } from '@redux-devtools/extension';
-  import thunk from 'redux-thunk';
-  import reducer from '../reducers';
-
-  const store = createStore(
-    reducer,
-    composeWithDevTools(
-      applyMiddleware(thunk),
-    ),
-  );
-
-  export default store;
-  ```
-  </details>
 
   <details><summary><b> :bulb: Documentação da API de Cotações de Moedas</b></summary>
 
@@ -290,29 +79,7 @@ Neste projeto, verificamos se você é capaz de:
 
 </details>
 
-<details>
-  <summary><strong>🗣 Nos dê feedbacks sobre o projeto!</strong></summary><br />
-
-Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. 
-**Leva menos de 3 minutos!**
-
-[FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
-
-</details>
-
-<details>
-  <summary><strong>🗂 Compartilhe seu portfólio!</strong></summary><br />
-
-  Você sabia que o LinkedIn é a principal rede social profissional e compartilhar o seu aprendizado lá é muito importante para quem deseja construir uma carreira de sucesso? Compartilhe esse projeto no seu LinkedIn, marque o perfil da Trybe (@trybe) e mostre para a sua rede toda a sua evolução.
-</details>
-
 # Requisitos
-
-:warning: **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.** :warning:
-
-:warning: Os gifs são meramente ilustrativos para visualizar o fluxo da aplicação, os nomes devem seguir os requisitos e não o gif. :warning:
-
----
 
 ## Página de Login
 
@@ -630,7 +397,6 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas e que tr
   * Em caso de dúvidas leia a seção <a href="#testes">Testes > Execução de teste de cobertura</a>.
 
 </details>
-
 <details>
 <summary><strong>O que será avaliado</strong></summary><br />
 
